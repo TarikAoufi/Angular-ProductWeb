@@ -1,0 +1,43 @@
+<div class="container-sm col-sm-6  p-3 my-3 bg-dark text-dark">
+    <div class="card">
+        <div class="card-header">Add Product</div>
+        <div class="card-body" *ngIf="mode==1">
+            <form #f="ngForm" (ngSubmit)="onSaveProduct(f.value)">
+                <div class="form-group">
+                    <label class="control-label">Designation</label>
+                    <input class="form-control" type="text" name="designation" ngModel>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Quantity</label>
+                    <input class="form-control" type="number" name="quantity" ngModel>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Price</label>
+                    <input class="form-control" type="text" name="price" ngModel>
+                </div>
+                <button class="btn btn-success" type="submit">Save</button>
+            </form>
+        </div>
+        <div class="card-body" *ngIf="mode==2">
+            <button class="btn btn-primary" (click)="onAddProduct()">Add Product</button>
+            <button class="btn btn-primary" (click)="onFindProducts()" style="margin-left:4px;">Find Products</button>
+            <p></p>
+            <div class="form-group">
+                <label>ID:</label>
+                <label>{{currentProduct.id}}</label>
+            </div>
+            <div class="form-group">
+                <label>Designation:</label>
+                <label>{{currentProduct.designation}}</label>
+            </div>
+            <div class="form-group">
+                <label>Price:</label>
+                <label>{{currentProduct.price}}</label>
+            </div>
+            <div class="form-group">
+                <label>Quantity:</label>
+                <label>{{currentProduct.quantity}}</label>
+            </div>
+        </div>
+    </div>
+</div>

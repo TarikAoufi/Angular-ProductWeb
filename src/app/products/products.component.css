@@ -1,0 +1,11 @@
+.clickable{
+    cursor: pointer;
+}
+
+.input-space {
+    padding-left: 10px;
+  }
+
+.label-space {
+    padding-right: 10px;
+}
